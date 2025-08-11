@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login/Sign-Up Form</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Login Form -->
+        <div class="form-container login-form">
+            <h2>Login</h2>
+            <form action="#" method="POST">
+                <div class="input-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" placeholder="Enter your username" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                </div>
+                <button type="submit" class="submit-btn">Login</button>
+                <p>Don't have an account? <a href="#" class="toggle-form">Sign Up</a></p>
+            </form>
+        </div>
+
+        <!-- Sign-Up Form -->
+        <div class="form-container signup-form">
+            <h2>Sign Up</h2>
+            <form action="#" method="POST">
+                <div class="input-group">
+                    <label for="new-username">Username</label>
+                    <input type="text" id="new-username" name="new-username" placeholder="Enter your username" required>
+                </div>
+                <div class="input-group">
+                    <label for="new-email">Email</label>
+                    <input type="email" id="new-email" name="new-email" placeholder="Enter your email" required>
+                </div>
+                <div class="input-group">
+                    <label for="new-password">Password</label>
+                    <input type="password" id="new-password" name="new-password" placeholder="Create a password" required>
+                </div>
+                <button type="submit" class="submit-btn">Sign Up</button>
+                <p>Already have an account? <a href="#" class="toggle-form">Login</a></p>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Toggle between Login and Sign-Up Form
+        const toggleLinks = document.querySelectorAll('.toggle-form');
+        const container = document.querySelector('.container');
+
+        toggleLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                container.classList.toggle('show-signup');
+            });
+        });
+    </script>
+</body>
+</html>
